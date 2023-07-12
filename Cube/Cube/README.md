@@ -1,6 +1,14 @@
-## Getting Started
+## Welcome
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Hello and welcome! This Reposistory is to Document my Progress as I create a java program that will project 3-D objects onto your 2-D screen.
+This is to help me become more proficient with Java and as, in my opinion a cool Personal Project.
+
+## Plan
+
+My plan for this project is as follows:
+
+First create a program that will be able to render a plane that is orthogonal to the x y z axis
+
 
 ## Folder Structure
 
