@@ -3,7 +3,7 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
  
-public class Main extends JPanel {
+public class Cube extends JPanel {
  
    private double vertex[][][][]
            = {
@@ -112,7 +112,7 @@ public class Main extends JPanel {
    }
  
    public static void main(String[] args) throws InterruptedException {
-      Main jPanel = new Main();
+      Cube jPanel = new Cube();
       JFrame application = new JFrame("Rotating Cube");
       application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       application.add(jPanel);

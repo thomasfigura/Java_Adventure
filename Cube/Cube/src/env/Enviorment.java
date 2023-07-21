@@ -1,3 +1,5 @@
+package env;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -12,16 +14,25 @@ import javax.swing.JPanel;
  * TODO: Make that observer be able to Move
  * </p>
  */
-public class Enviorment {
-    Observer obs = new Observer(5, 0, 5);
+public class Enviorment extends JPanel{
+    Observert obsert = new Observert(5, 0, 5);
+    double aspect2 = 1.0;
+    double fovy2 = .87;
+    double near2 = .1;
+    double far2 = 10;
+
+    obsert.setPerspectiveMatrix(fovy2, aspect2, near2, far2);
+    
     ArrayList<Wall> objects = new ArrayList<>();
-
-
+    
     public void addObject(Wall t) {
         objects.add(t);
     }
 
     public void visualize(Wall t) {
+        for(int i = 0; i < objects.size(); i++){
+
+        }
 
         ArrayList<Double[]> newP = new ArrayList<>();
         t.setPerspective(newP);
@@ -32,6 +43,13 @@ public class Enviorment {
             for (int i = 0; i < objects.size(); i++) {
                 visualize(objects.get(i));
             }
+        }
+    }
+
+    @Override
+    public void paintComponent(Graphics graphics){
+        for(int i = 0; i<objects.size(); i++){
+            objects.get(i).drawWall(graphics);
         }
     }
 

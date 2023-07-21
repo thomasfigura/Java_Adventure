@@ -1,3 +1,4 @@
+package env;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import javax.swing.JPanel;
  * TODO 2: Add the abilitiy to have a diagonal Plane, not just an orthogonal
  * one.
  */
-public class Wall {
+public class Wall extends JPanel {
     protected double xcoord;
     protected double ycoord;
     final double zcoord;
@@ -61,5 +62,13 @@ public class Wall {
 
     public void setPerspective(ArrayList<Double[]> t) {
         newPerspective = t;
+    }
+
+    public void drawWall(Graphics graphics) {
+        for (int i = 0; i < newPerspective.size(); i++) {
+            if (i + 10 < newPerspective.size()) {
+                
+            }
+        }
     }
 }
