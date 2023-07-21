@@ -1,4 +1,5 @@
 package env;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -23,21 +24,23 @@ public class Wall extends JPanel {
     protected int height;
     ArrayList<Double[]> coords;
     ArrayList<Double[]> newPerspective;
+    protected int SCALE;
 
     public Wall(int x, int y, int width, int height) {
         xcoord = x;
         ycoord = y;
-        zcoord = 10;
+        zcoord = 100;
         this.width = width;
         this.height = height;
         coords = new ArrayList<>();
+        SCALE = 10;
 
         ArrayList<Double[]> newPerspective = new ArrayList<>();
 
         for (int i = 0; i < xcoord; i++) {
             for (int j = 0; j < ycoord; j++) {
                 for (int k = 0; k < zcoord; k++) {
-                    Double[] values = { (double) i, (double) j, (double) k };
+                    Double[] values = { (double) i, (double) j, (double) k, 1.0 };
                     coords.add(values);
                 }
             }
@@ -65,9 +68,12 @@ public class Wall extends JPanel {
     }
 
     public void drawWall(Graphics graphics) {
+        System.out.println("D");
+        graphics.setColor(Color.BLUE);
         for (int i = 0; i < newPerspective.size(); i++) {
             if (i + 10 < newPerspective.size()) {
-                
+                graphics.drawLine(newPerspective.get(i)[0].intValue()*SCALE, newPerspective.get(i)[1].intValue()*SCALE,
+                        newPerspective.get(i + 10)[0].intValue()*SCALE, newPerspective.get(i + 10)[1].intValue()*SCALE);
             }
         }
     }

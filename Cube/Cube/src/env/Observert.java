@@ -46,4 +46,14 @@ public class Observert {
         projectionMatrix[2][3] = 1.0;
         projectionMatrix[3][2] = -(far * near) / (far - near);
     }
+
+    public Double[] perspectiveMatrixMultiply(Double[] coords) {
+        Double[] n = new Double[4];
+        for (int i = 0; i <= 3; i++) {
+            for (int j = 0; j <= 3; j++) {
+                n[i] = projectionMatrix[i][j] * coords[j];
+            }
+        }
+        return n;
+    }
 }
