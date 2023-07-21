@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 public class HomePage extends JFrame {
     JFrame home;
+
     public HomePage(int width, int height) {
         home = new JFrame("Home");
         home.setSize(width, height);
@@ -27,8 +28,9 @@ public class HomePage extends JFrame {
             }
         });
 
-        home.add(button);
 
+
+        home.add(button);
     }
 
     public void startDrawing() throws InterruptedException {

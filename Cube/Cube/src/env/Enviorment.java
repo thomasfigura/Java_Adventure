@@ -26,10 +26,10 @@ public class Enviorment extends JPanel {
         double fovy2 = .87;
         double near2 = .1;
         double far2 = 10;
-        obsert = new Observert(5, 0, 5);
+        obsert = new Observert(0, 0, 0);
         obsert.setPerspectiveMatrix(fovy2, aspect2, near2, far2);
         objects = new ArrayList<>();
-        Wall w = new Wall(0, 10, 200, 200);
+        Wall w = new Wall(10, 0, 200, 200);
         addObject(w);
 
     }

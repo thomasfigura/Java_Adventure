@@ -29,7 +29,7 @@ public class Wall extends JPanel {
     public Wall(int x, int y, int width, int height) {
         xcoord = x;
         ycoord = y;
-        zcoord = 100;
+        zcoord = 50;
         this.width = width;
         this.height = height;
         coords = new ArrayList<>();
@@ -66,16 +66,20 @@ public class Wall extends JPanel {
     public void setPerspective(ArrayList<Double[]> t) {
         newPerspective = t;
     }
-
+    /**
+     * Draws the Wall
+     * 
+     * @TODO: Solid Fill the Wall, not Line tracing.
+     * @param graphics
+     */
     public void drawWall(Graphics graphics) {
-
         graphics.setColor(Color.BLUE);
         for (int i = 0; i <= newPerspective.size(); i++) {
             if (i + 10 < newPerspective.size()) {
-                graphics.drawLine(newPerspective.get(i)[0].intValue() * SCALE+ width/2,
-                        newPerspective.get(i)[1].intValue() * SCALE + height/2 ,
-                        newPerspective.get(i + 10)[0].intValue() * SCALE +  width/2,
-                        newPerspective.get(i + 10)[1].intValue() * SCALE+ height/2);
+                graphics.fillRect(newPerspective.get(i)[0].intValue() * SCALE + width / 2,
+                        newPerspective.get(i)[1].intValue() * SCALE + height / 2,
+                        newPerspective.get(i + 10)[0].intValue() * SCALE + width / 2,
+                        newPerspective.get(i + 10)[1].intValue() * SCALE + height / 2);
             }
         }
     }
