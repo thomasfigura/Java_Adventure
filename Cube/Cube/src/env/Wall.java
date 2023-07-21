@@ -37,9 +37,9 @@ public class Wall extends JPanel {
 
         ArrayList<Double[]> newPerspective = new ArrayList<>();
 
-        for (int i = 0; i < xcoord; i++) {
-            for (int j = 0; j < ycoord; j++) {
-                for (int k = 0; k < zcoord; k++) {
+        for (int i = 0; i <= xcoord; i++) {
+            for (int j = 0; j <= ycoord; j++) {
+                for (int k = 0; k <= zcoord; k++) {
                     Double[] values = { (double) i, (double) j, (double) k, 1.0 };
                     coords.add(values);
                 }
@@ -68,12 +68,14 @@ public class Wall extends JPanel {
     }
 
     public void drawWall(Graphics graphics) {
-        System.out.println("D");
+
         graphics.setColor(Color.BLUE);
-        for (int i = 0; i < newPerspective.size(); i++) {
+        for (int i = 0; i <= newPerspective.size(); i++) {
             if (i + 10 < newPerspective.size()) {
-                graphics.drawLine(newPerspective.get(i)[0].intValue()*SCALE, newPerspective.get(i)[1].intValue()*SCALE,
-                        newPerspective.get(i + 10)[0].intValue()*SCALE, newPerspective.get(i + 10)[1].intValue()*SCALE);
+                graphics.drawLine(newPerspective.get(i)[0].intValue() * SCALE+ width/2,
+                        newPerspective.get(i)[1].intValue() * SCALE + height/2 ,
+                        newPerspective.get(i + 10)[0].intValue() * SCALE +  width/2,
+                        newPerspective.get(i + 10)[1].intValue() * SCALE+ height/2);
             }
         }
     }

@@ -50,9 +50,11 @@ public class Observert {
     public Double[] perspectiveMatrixMultiply(Double[] coords) {
         Double[] n = new Double[4];
         for (int i = 0; i <= 3; i++) {
+            double sum = 0.0;
             for (int j = 0; j <= 3; j++) {
-                n[i] = projectionMatrix[i][j] * coords[j];
+                sum += (projectionMatrix[i][j] * coords[j]);
             }
+            n[i] = sum;
         }
         return n;
     }

@@ -48,7 +48,7 @@ public class Enviorment extends JPanel {
 
     public void makeVisualize() {
         if (objects.size() != 0) {
-            for (int i = 0; i < objects.size(); i++) {
+            for (int i = 0; i <= objects.size(); i++) {
                 visualize(objects.get(i));
             }
         }
@@ -56,7 +56,6 @@ public class Enviorment extends JPanel {
 
     @Override
     public void paintComponent(Graphics graphics) {
-        System.out.println("P");
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.fillRect(0, 0, IMAGE_SIZE, IMAGE_SIZE);
         for (int i = 0; i < objects.size(); i++) {
@@ -64,5 +63,4 @@ public class Enviorment extends JPanel {
             objects.get(i).drawWall(graphics);
         }
     }
-
 }
